@@ -76,3 +76,8 @@ table tr th{
     background-color: rgb(222, 108, 108);
     color: rgb(185, 195, 204);
 }
+table tr p {
+    background-color:blue;
+    color: white;
+}
+
