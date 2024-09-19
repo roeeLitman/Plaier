@@ -113,8 +113,23 @@ const CheckingWhereToAdd = (plaier:Plaier):void => {
 }
 
 const addPlaier = (plaier:Plaier, Tagclass:string):void =>{
-    console.log(1);
-    
+
+    const divInformtion = document.querySelector("." + Tagclass)
+
+    const name: HTMLParagraphElement = document.createElement("p")
+    name.textContent = plaier.playerName!
+    const threePrecents: HTMLParagraphElement = document.createElement("p")
+    threePrecents.textContent = plaier.threePercent + "%"
+    const twoPrecents: HTMLParagraphElement = document.createElement("p")
+    twoPrecents.textContent = plaier.twoPercent + "%"
+    const points: HTMLParagraphElement = document.createElement("p")
+    points.textContent = plaier.points.toString()
+
+    divInformtion?.appendChild(name)
+    divInformtion?.appendChild(threePrecents)
+    divInformtion?.appendChild(twoPrecents)
+    divInformtion?.appendChild(points)
+
 }
 
 

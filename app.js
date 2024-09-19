@@ -91,5 +91,17 @@ const CheckingWhereToAdd = (plaier) => {
     }
 };
 const addPlaier = (plaier, Tagclass) => {
-    console.log(1);
+    const divInformtion = document.querySelector("." + Tagclass);
+    const name = document.createElement("p");
+    name.textContent = plaier.playerName;
+    const threePrecents = document.createElement("p");
+    threePrecents.textContent = plaier.threePercent + "%";
+    const twoPrecents = document.createElement("p");
+    twoPrecents.textContent = plaier.twoPercent + "%";
+    const points = document.createElement("p");
+    points.textContent = plaier.points.toString();
+    divInformtion === null || divInformtion === void 0 ? void 0 : divInformtion.appendChild(name);
+    divInformtion === null || divInformtion === void 0 ? void 0 : divInformtion.appendChild(threePrecents);
+    divInformtion === null || divInformtion === void 0 ? void 0 : divInformtion.appendChild(twoPrecents);
+    divInformtion === null || divInformtion === void 0 ? void 0 : divInformtion.appendChild(points);
 };
