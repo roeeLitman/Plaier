@@ -76,7 +76,7 @@ const creatRoeHtml = (player:Plaier):HTMLTableRowElement =>{
     const p: HTMLParagraphElement = document.createElement("p")
     p.textContent = `add ${player.playerName} ro Current Team`
     p.addEventListener("click",(e)=>{
-        
+        CheckingWhereToAdd(player)
         
     })
     Action.appendChild(p)
@@ -90,6 +90,35 @@ const creatRoeHtml = (player:Plaier):HTMLTableRowElement =>{
 
     return row
 }
+
+const CheckingWhereToAdd = (plaier:Plaier):void => {
+    switch(plaier.position){
+        case "PG" :
+            addPlaier(plaier,"PG")
+            break;        
+        case "SG" :
+            addPlaier(plaier,"SG")
+            break;
+        case "SF":
+            addPlaier(plaier,"SF")
+            break
+        case "PF":
+            addPlaier(plaier,"PF")
+            break;
+        case "C":
+            addPlaier(plaier,"C")
+            break;
+    }
+
+}
+
+const addPlaier = (plaier:Plaier, Tagclass:string):void =>{
+    console.log(1);
+    
+}
+
+
+
 
 
 

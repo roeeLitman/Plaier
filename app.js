@@ -60,6 +60,7 @@ const creatRoeHtml = (player) => {
     const p = document.createElement("p");
     p.textContent = `add ${player.playerName} ro Current Team`;
     p.addEventListener("click", (e) => {
+        CheckingWhereToAdd(player);
     });
     Action.appendChild(p);
     row.appendChild(tdPlayer);
@@ -69,4 +70,26 @@ const creatRoeHtml = (player) => {
     row.appendChild(pPercent);
     row.appendChild(Action);
     return row;
+};
+const CheckingWhereToAdd = (plaier) => {
+    switch (plaier.position) {
+        case "PG":
+            addPlaier(plaier, "PG");
+            break;
+        case "SG":
+            addPlaier(plaier, "SG");
+            break;
+        case "SF":
+            addPlaier(plaier, "SF");
+            break;
+        case "PF":
+            addPlaier(plaier, "PF");
+            break;
+        case "C":
+            addPlaier(plaier, "C");
+            break;
+    }
+};
+const addPlaier = (plaier, Tagclass) => {
+    console.log(1);
 };
