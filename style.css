@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    /* position: relative; */
+    height: 100vh;
+}
+
+nav{
+    text-align: center;
+    background-color: blue;
+}
+
+.continer-infomtion{
+    display: flex;
+    flex-direction: column;
+    /* height: 100%; */
+    text-align: center;
+    /* align-items: center; */
+}
+
+.continer-players {
+    display: flex;
+    justify-content: space-evenly;
+    height: 30%;
+    background-color:rgb(253, 248, 248) ;
+}
+
+.continer-players div{
+    background-color: rgb(198, 200, 202);
+    width: 15%;
+    text-align: center;
+}
+
+.search-inpormtion{
+    display: flex;
+    flex-direction: column;
+    justify-content:center ;
+    align-items: center;
+    /* background-color: rgb(208, 194, 194); */
+    /* width: 80%; */
+}
+
+.search{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(208, 194, 194);
+    width: 50%;
+    color: white;
+}
+
+.search * {
+    width: 90%;
+}
+
+.search p{
+    width: 20%;
+    background-color: rgb(56, 42, 207);
+}
+
+.table{
+
+    position: absolute;
+    width: 100%;
+
+}
