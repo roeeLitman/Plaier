@@ -6,8 +6,9 @@ console.log();
 bottuneGetPlayer.addEventListener("click", async (e) => {
     const player = searchParameters();
     const players = await getAllPlaierFromApi(player);
-    for (; ; )
-        ;
+    for (const player of players) {
+        const htmlRow = creatRoeHtml(player);
+    }
 });
 const searchParameters = () => {
     const player = {
@@ -33,4 +34,30 @@ const getAllPlaierFromApi = async (plaier) => {
     catch (err) {
         console.log(err);
     }
+};
+const creatRoeHtml = (player) => {
+    const row = document.createElement("tr");
+    const tdPlayer = document.createElement("td");
+    tdPlayer.textContent = player.playerName;
+    const Postion = document.createElement("td");
+    Postion.textContent = player.position;
+    const Points = document.createElement("td");
+    Points.textContent = player.points.toString();
+    const FG = document.createElement("td");
+    FG.textContent = player.twoPercent.toString();
+    const pPercent = document.createElement("td");
+    pPercent.textContent = player.threePercent.toString();
+    const Action = document.createElement("td");
+    const p = document.createElement("p");
+    p.textContent = `add ${player.playerName} ro Current Team`;
+    p.addEventListener("click", (e) => {
+    });
+    Action.appendChild(p);
+    row.appendChild(tdPlayer);
+    row.appendChild(Postion);
+    row.appendChild(Points);
+    row.appendChild(FG);
+    row.appendChild(pPercent);
+    row.appendChild(Action);
+    return row;
 };

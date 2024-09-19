@@ -8,7 +8,11 @@ console.log();
 bottuneGetPlayer.addEventListener("click", async (e): Promise<void> => {
   const player: Plaier = searchParameters();
   const players: Plaier[] | undefined = await getAllPlaierFromApi(player);
-  for
+  for(const player of players!){
+    const htmlRow: HTMLTableRowElement = creatRoeHtml(player)
+    
+    
+  }
   
 });
 
@@ -43,7 +47,39 @@ const getAllPlaierFromApi = async (plaier: Plaier): Promise<Plaier[] | undefined
   } catch (err) {
     console.log(err);
   }
-};
+}
+
+const creatRoeHtml = (player:Plaier):HTMLTableRowElement =>{
+
+    const row = document.createElement("tr")
+
+    const tdPlayer: HTMLTableCellElement = document.createElement("td")
+    tdPlayer.textContent = player.playerName!
+    const Postion: HTMLTableCellElement = document.createElement("td")
+    Postion.textContent = player.position
+    const Points: HTMLTableCellElement = document.createElement("td")
+    Points.textContent = player.points.toString()
+    const FG: HTMLTableCellElement = document.createElement("td")
+    FG.textContent = player.twoPercent.toString()
+    const pPercent: HTMLTableCellElement = document.createElement("td")
+    pPercent.textContent = player.threePercent.toString()
+    const Action: HTMLTableCellElement = document.createElement("td")
+    const p: HTMLParagraphElement = document.createElement("p")
+    p.textContent = `add ${player.playerName} ro Current Team`
+    p.addEventListener("click",(e)=>{
+
+    })
+    Action.appendChild(p)
+
+    row.appendChild(tdPlayer)
+    row.appendChild(Postion)
+    row.appendChild(Points)
+    row.appendChild(FG)
+    row.appendChild(pPercent)
+    row.appendChild(Action)
+
+    return row
+}
 
 interface Plaier {
   position: string;

@@ -65,9 +65,10 @@ nav{
     background-color: rgb(56, 42, 207);
 }
 
-.table{
-
-    position: absolute;
+table{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between ;
+    align-items: center;
     width: 100%;
-
 }
