@@ -2,10 +2,10 @@
 let player;
 const BASE_URl = "https://nbaserver-q21u.onrender.com/api/filter";
 const bottuneGetPlayer = document.querySelector(".cerch-player");
-console.log();
 bottuneGetPlayer.addEventListener("click", async (e) => {
     const player = searchParameters();
     const players = await getAllPlaierFromApi(player);
+    clearTabal();
     for (const player of players) {
         const htmlRow = creatRoeHtml(player);
     }
@@ -35,8 +35,15 @@ const getAllPlaierFromApi = async (plaier) => {
         console.log(err);
     }
 };
+const clearTabal = () => {
+    const listRow = document.querySelectorAll(".delet-row");
+    for (const row of listRow) {
+        row.remove();
+    }
+};
 const creatRoeHtml = (player) => {
     const row = document.createElement("tr");
+    row.classList.add("delet-row");
     const tdPlayer = document.createElement("td");
     tdPlayer.textContent = player.playerName;
     const Postion = document.createElement("td");

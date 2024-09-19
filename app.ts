@@ -3,14 +3,14 @@ const BASE_URl: string = "https://nbaserver-q21u.onrender.com/api/filter";
 
 const bottuneGetPlayer: HTMLParagraphElement =
   document.querySelector(".cerch-player")!;
-console.log();
+
 
 bottuneGetPlayer.addEventListener("click", async (e): Promise<void> => {
   const player: Plaier = searchParameters();
   const players: Plaier[] | undefined = await getAllPlaierFromApi(player);
+  clearTabal()
   for(const player of players!){
     const htmlRow: HTMLTableRowElement = creatRoeHtml(player)
-    
     
   }
   
@@ -49,9 +49,17 @@ const getAllPlaierFromApi = async (plaier: Plaier): Promise<Plaier[] | undefined
   }
 }
 
+const clearTabal = ():void =>{
+   const listRow: NodeListOf<Element> = document.querySelectorAll(".delet-row")
+   for(const row of listRow){
+         row.remove()
+   }
+}
+
 const creatRoeHtml = (player:Plaier):HTMLTableRowElement =>{
 
     const row = document.createElement("tr")
+    row.classList.add("delet-row")
 
     const tdPlayer: HTMLTableCellElement = document.createElement("td")
     tdPlayer.textContent = player.playerName!
