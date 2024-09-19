@@ -66,9 +66,13 @@ nav{
 }
 
 table{
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
-    justify-content:space-between ;
-    align-items: center;
-    width: 100%;
+    justify-content: space-between;
+    
+}
+
+table tr th{
+    background-color: rgb(222, 108, 108);
+    color: rgb(185, 195, 204);
 }
