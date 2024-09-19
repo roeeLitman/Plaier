@@ -60,6 +60,7 @@ const clearTabal = ():void =>{
 const creatRoeHtml = (player:Plaier):HTMLTableRowElement =>{
 
     const row = document.createElement("tr")
+
     row.classList.add("delet-row")
 
     const tdPlayer: HTMLTableCellElement = document.createElement("td")
@@ -115,6 +116,9 @@ const CheckingWhereToAdd = (plaier:Plaier):void => {
 const addPlaier = (plaier:Plaier, Tagclass:string):void =>{
 
     const divInformtion = document.querySelector("." + Tagclass)
+    while(divInformtion!.children.length > 1){
+        divInformtion?.lastChild?.remove()
+    }
 
     const name: HTMLParagraphElement = document.createElement("p")
     name.textContent = plaier.playerName!

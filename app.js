@@ -91,7 +91,11 @@ const CheckingWhereToAdd = (plaier) => {
     }
 };
 const addPlaier = (plaier, Tagclass) => {
+    var _a;
     const divInformtion = document.querySelector("." + Tagclass);
+    while (divInformtion.children.length > 1) {
+        (_a = divInformtion === null || divInformtion === void 0 ? void 0 : divInformtion.lastChild) === null || _a === void 0 ? void 0 : _a.remove();
+    }
     const name = document.createElement("p");
     name.textContent = plaier.playerName;
     const threePrecents = document.createElement("p");
