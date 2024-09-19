@@ -1,4 +1,4 @@
-let player: Plaier[];
+let yorePlaier: Plaier[];
 const BASE_URl: string = "https://nbaserver-q21u.onrender.com/api/filter";
 
 const bottuneGetPlayer: HTMLParagraphElement =
@@ -6,12 +6,13 @@ const bottuneGetPlayer: HTMLParagraphElement =
 
 
 bottuneGetPlayer.addEventListener("click", async (e): Promise<void> => {
+  const table: HTMLTableElement = document.querySelector(".table")!
   const player: Plaier = searchParameters();
   const players: Plaier[] | undefined = await getAllPlaierFromApi(player);
   clearTabal()
   for(const player of players!){
     const htmlRow: HTMLTableRowElement = creatRoeHtml(player)
-    
+    table.appendChild(htmlRow)
   }
   
 });
@@ -75,7 +76,8 @@ const creatRoeHtml = (player:Plaier):HTMLTableRowElement =>{
     const p: HTMLParagraphElement = document.createElement("p")
     p.textContent = `add ${player.playerName} ro Current Team`
     p.addEventListener("click",(e)=>{
-
+        
+        
     })
     Action.appendChild(p)
 
@@ -88,6 +90,8 @@ const creatRoeHtml = (player:Plaier):HTMLTableRowElement =>{
 
     return row
 }
+
+
 
 interface Plaier {
   position: string;

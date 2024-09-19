@@ -1,13 +1,15 @@
 "use strict";
-let player;
+let yorePlaier;
 const BASE_URl = "https://nbaserver-q21u.onrender.com/api/filter";
 const bottuneGetPlayer = document.querySelector(".cerch-player");
 bottuneGetPlayer.addEventListener("click", async (e) => {
+    const table = document.querySelector(".table");
     const player = searchParameters();
     const players = await getAllPlaierFromApi(player);
     clearTabal();
     for (const player of players) {
         const htmlRow = creatRoeHtml(player);
+        table.appendChild(htmlRow);
     }
 });
 const searchParameters = () => {
